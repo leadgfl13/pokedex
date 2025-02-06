@@ -1,10 +1,12 @@
 import "./style.css";
 
-let search = document.getElementById("input");
+let search = document.getElementById("info");
 let submit = document.getElementById("submit");
+
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
 	alert("howdy");
+	getPokemon(search.value);
 });
 
 async function getPokemon(pokemon) {
