@@ -6,12 +6,13 @@ let sprite = document.getElementById("pokeimage");
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
-	alert("howdy");
 	getPokemon(search.value);
 });
 
 function addImage(poke) {
 	sprite.src = poke.sprites.front_shiny;
+	let cry = new Audio(poke.cries.legacy);
+	cry.play();
 }
 
 async function getPokemon(pokemon) {
@@ -20,9 +21,7 @@ async function getPokemon(pokemon) {
 	})
 		.then((poke) => poke.json())
 		.then((poke) => {
+			console.log(poke);
 			addImage(poke);
 		});
-
-	let frontshiny = poke.sprites.front_shiny;
-	pokeimage.src = frontshiny;
 }
