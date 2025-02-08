@@ -3,6 +3,7 @@ import "./style.css";
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
 let sprite = document.getElementById("pokeimage");
+let number = document.getElementById("number");
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -11,7 +12,9 @@ submit.addEventListener("click", (e) => {
 
 function addImage(poke) {
 	sprite.src = poke.sprites.front_shiny;
+	number.innerHTML = poke.order;
 	let cry = new Audio(poke.cries.legacy);
+	console.log(poke);
 	cry.play();
 }
 
