@@ -4,3 +4,18 @@ body {
 	flex-direction: column;
 	gap: 20px;
 }
+
+#pokeimage {
+	height: 200px;
+	width: 200px;
+}
+
+.pokedex {
+	margin: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 80%;
+	width: 60%;
+	border: 4px groove red;
+}
