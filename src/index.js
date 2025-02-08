@@ -12,7 +12,6 @@ submit.addEventListener("click", (e) => {
 
 function addImage(poke) {
 	sprite.src = poke.sprites.front_shiny;
-	number.innerHTML = poke.order;
 	let cry = new Audio(poke.cries.legacy);
 	console.log(poke);
 	cry.play();
@@ -24,7 +23,7 @@ async function getPokemon(pokemon) {
 	})
 		.then((poke) => poke.json())
 		.then((poke) => {
-			console.log(poke);
 			addImage(poke);
+			console.log(poke);
 		});
 }
