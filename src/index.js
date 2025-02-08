@@ -3,6 +3,7 @@ import "./style.css";
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
 let number = document.getElementById("number");
+let left = document.getElementById("left");
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -15,7 +16,14 @@ function addImage(poke) {
 	let sprite = document.createElement("img");
 	sprite.src = poke.sprites.front_shiny;
 	screen.append(sprite);
+	console.log(poke);
 	let cry = new Audio(poke.cries.legacy);
+	let name = poke.forms[0].name;
+	let namediv = document.createElement("div");
+	namediv.innerHTML = name;
+	left.append(namediv);
+	namediv.setAttribute("id", "namediv");
+
 	console.log(poke);
 	cry.play();
 }
