@@ -5,12 +5,42 @@ body {
 	gap: 20px;
 }
 
+.screen {
+	display: flex;
+	background-color: Gray;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
 #pokeimage {
 	height: 200px;
 	width: 200px;
+	margin: auto;
+	padding: auto;
+}
+.left {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+#info {
+	font-size: 22px;
+	font-weight: 700;
+	text-align: Center;
 }
 
+#number {
+	font-size: 22px;
+	font-weight: 700;
+	text-align: Center;
+	border: 2px solid gray;
+}
 .pokedex {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr;
 	margin: auto;
 	position: relative;
 	top: 50%;
