@@ -1,3 +1,14 @@
+@font-face {
+	font-family: "pokedexfont";
+
+	src: url("./Pokemon\ Solid.ttf") format("woff"),
+		url("./Pokemon\ Solid.ttf") format("woff");
+
+	font-weight: normal;
+
+	font-style: normal;
+}
+
 body {
 	background-color: skyblue;
 	display: flex;
@@ -5,20 +16,25 @@ body {
 	gap: 20px;
 }
 
-.screen {
+#screen {
+	font-family: "pokedexfont";
 	display: flex;
+	font-size: 48px;
+	text-decoration: underline;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 	width: 100%;
-}
-#pokeimage {
 	background-color: rgb(88, 129, 88);
 	height: 250px;
 	width: 250px;
 	margin: auto;
 	padding: auto;
-	border: 4px groove lightgray;
+	border: 14px groove lightgray;
+}
+img {
+	height: 100%;
+	width: 100%;
 }
 .left {
 	background-color: red;

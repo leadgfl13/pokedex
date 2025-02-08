@@ -2,7 +2,6 @@ import "./style.css";
 
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
-let sprite = document.getElementById("pokeimage");
 let number = document.getElementById("number");
 
 submit.addEventListener("click", (e) => {
@@ -11,7 +10,11 @@ submit.addEventListener("click", (e) => {
 });
 
 function addImage(poke) {
+	let screen = document.getElementById("screen");
+	screen.innerHTML = "";
+	let sprite = document.createElement("img");
 	sprite.src = poke.sprites.front_shiny;
+	screen.append(sprite);
 	let cry = new Audio(poke.cries.legacy);
 	console.log(poke);
 	cry.play();
