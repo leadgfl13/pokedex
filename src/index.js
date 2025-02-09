@@ -18,23 +18,42 @@ function addImage(poke) {
 	screen.append(sprite);
 	console.log(poke);
 	let cry = new Audio(poke.cries.legacy);
-	let name = poke.forms[0].name;
-	let namediv = document.createElement("div");
-	namediv.innerHTML = name;
-	left.append(namediv);
-	namediv.setAttribute("id", "namediv");
 
-	console.log(poke);
 	cry.play();
 }
 
+function addFlavor(flavor) {
+	let name = poke.forms[0].name;
+	let namediv = document.createElement("div");
+	namediv.innerHTML = poke.game_indices[0].game_index;
+	namediv.setAttribute("id", "namediv");
+	left.append(namediv);
+	console.log(poke);
+}
+
 async function getPokemon(pokemon) {
-	const poke = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`, {
-		mode: "cors",
-	})
+	const poke = await fetch(
+		`
+		https://pokeapi.co/api/v2/pokemon/${pokemon}`,
+		{
+			mode: "cors",
+		}
+	)
 		.then((poke) => poke.json())
 		.then((poke) => {
 			addImage(poke);
 			console.log(poke);
+		});
+
+	const flavor = await fetch(
+		`https://pokeapi.co/api/v2/pokemon-species/${pokemon}`,
+		{
+			mode: "cors",
+		}
+	)
+		.then((flavor) => flavor.json())
+		.then((flavor) => {
+			console.log(flavor);
+			addFlavor(flavor);
 		});
 }
