@@ -23,12 +23,11 @@ function addImage(poke) {
 }
 
 function addFlavor(flavor) {
-	let name = poke.forms[0].name;
+	let name = flavor.flavor_text_entries[0].flavor_text;
 	let namediv = document.createElement("div");
-	namediv.innerHTML = poke.game_indices[0].game_index;
+	namediv.innerHTML = name;
 	namediv.setAttribute("id", "namediv");
 	left.append(namediv);
-	console.log(poke);
 }
 
 async function getPokemon(pokemon) {
