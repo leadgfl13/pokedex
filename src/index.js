@@ -22,13 +22,13 @@ function addImage(poke) {
 	let cry = new Audio(poke.cries.legacy);
 	cry.play();
 }
-function randomizer() {
-	return Math.floor(Math.random() * 10);
-}
+
 //gets the pokedex info from the second API fetch request and puts it on the screen
 function addFlavor(flavor) {
 	data.innerHTML = "";
-	let numz = randomizer();
+	let numz = (() => {
+		return Math.floor(Math.random() * 10);
+	})();
 	let name = flavor.flavor_text_entries[numz].flavor_text;
 	let namediv = document.createElement("div");
 	namediv.innerHTML = name;
