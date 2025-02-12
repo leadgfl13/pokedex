@@ -29,9 +29,10 @@ function addFlavor(flavor) {
 	let numz = (() => {
 		return Math.floor(Math.random() * 10);
 	})();
-	let name = flavor.flavor_text_entries[numz].flavor_text;
+	let description = flavor.flavor_text_entries[numz].flavor_text;
+	let version = flavor.flavor_text_entries[numz].version.name;
 	let namediv = document.createElement("div");
-	namediv.innerHTML = name;
+	namediv.innerHTML = description + " -- " + version;
 	namediv.setAttribute("id", "namediv");
 	data.append(namediv);
 }
