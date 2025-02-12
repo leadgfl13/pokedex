@@ -27,6 +27,7 @@ function randomizer() {
 }
 //gets the pokedex info from the second API fetch request and puts it on the screen
 function addFlavor(flavor) {
+	data.innerHTML = "";
 	let numz = randomizer();
 	let name = flavor.flavor_text_entries[numz].flavor_text;
 	let namediv = document.createElement("div");
