@@ -10,6 +10,7 @@ submit.addEventListener("click", (e) => {
 	getPokemon(search.value);
 });
 
+//uploads the image and plays the cry sound from the first API fetch request
 function addImage(poke) {
 	let screen = document.getElementById("screen");
 	screen.innerHTML = "";
@@ -18,12 +19,15 @@ function addImage(poke) {
 	screen.append(sprite);
 	console.log(poke);
 	let cry = new Audio(poke.cries.legacy);
-
 	cry.play();
 }
-
+function randomizer() {
+	return Math.floor(Math.random() * 10);
+}
+//gets the pokedex info from the second API fetch request and puts it on the screen
 function addFlavor(flavor) {
-	let name = flavor.flavor_text_entries[0].flavor_text;
+	let numz = randomizer();
+	let name = flavor.flavor_text_entries[numz].flavor_text;
 	let namediv = document.createElement("div");
 	namediv.innerHTML = name;
 	namediv.setAttribute("id", "namediv");
