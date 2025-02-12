@@ -4,6 +4,7 @@ let search = document.getElementById("info");
 let submit = document.getElementById("submit");
 let number = document.getElementById("number");
 let left = document.getElementById("left");
+let data = document.getElementById("data");
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -31,7 +32,7 @@ function addFlavor(flavor) {
 	let namediv = document.createElement("div");
 	namediv.innerHTML = name;
 	namediv.setAttribute("id", "namediv");
-	left.append(namediv);
+	data.append(namediv);
 }
 
 async function getPokemon(pokemon) {
