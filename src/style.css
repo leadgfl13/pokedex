@@ -85,6 +85,16 @@ button {
 
 	background-color: darkgray;
 }
+#circle {
+	position: relative;
+	top: -10px;
+	left: -10px;
+	height: 10%;
+	width: 7%;
+	border-radius: 75%;
+	background-color: rgb(25, 114, 203);
+	border: 2px solid rgb(211, 211, 211);
+}
 
 .pokedex {
 	display: grid;
