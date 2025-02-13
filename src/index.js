@@ -32,7 +32,12 @@ function addFlavor(flavor) {
 	let description = flavor.flavor_text_entries[numz].flavor_text;
 	let version = flavor.flavor_text_entries[numz].version.name;
 	let namediv = document.createElement("div");
-	namediv.innerHTML = description + " -- " + version;
+	namediv.innerHTML =
+		`Pokedex version:` +
+		version +
+		`<br> ` +
+		"Regional Dex#: <br>  Type:  <br> Region: Kanto <br> Weight: <br> <br>" +
+		description;
 	namediv.setAttribute("id", "namediv");
 	data.append(namediv);
 }
