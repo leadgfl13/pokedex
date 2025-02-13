@@ -89,22 +89,19 @@ img {
 	text-decoration: underline;
 	justify-content: center;
 	align-items: center;
-	height: 50%;
+	height: 70%;
 	width: 80%;
+	margin: auto;
 	background-color: rgb(88, 129, 88);
 	border: 14px groove lightgray;
 	padding-bottom: 4%;
 }
-.bottomleft {
-	height: 100%;
-	width: 100%;
-	display: flex;
-}
+
 #data {
 	grid-area: 3/1/4/2;
-
-	height: 100%;
-	width: 100%;
+	margin: auto;
+	height: 90%;
+	width: 90%;
 	background-color: rgb(88, 129, 88);
 	font-family: "pokedexfont";
 	border: 6px groove rgb(77, 75, 75);
