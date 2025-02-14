@@ -6,6 +6,8 @@ let number = document.getElementById("number");
 let left = document.getElementById("left");
 let data = document.getElementById("data");
 let name = "";
+let typing1 = "";
+let typing2 = "";
 let text_info = [];
 
 submit.addEventListener("click", (e) => {
@@ -20,6 +22,10 @@ function addImage(poke) {
 	let sprite = document.createElement("img");
 	sprite.src = poke.sprites.front_shiny;
 	name = poke.name;
+	typing1 = poke.types[0].type.name;
+	typing2 = poke.types[1].type.name;
+	console.log(typing1, typing2);
+
 	screen.append(sprite);
 	console.log(poke);
 	let cry = "";
