@@ -6,6 +6,7 @@ let number = document.getElementById("number");
 let left = document.getElementById("left");
 let data = document.getElementById("data");
 let name = "";
+let text_info = [];
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();

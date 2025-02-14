@@ -106,6 +106,7 @@ img {
 	font-family: "pokedexfont";
 	border: 6px groove rgb(77, 75, 75);
 	font-size: 16px;
+	overflow-x: scroll;
 }
 .right {
 	background-color: red;
