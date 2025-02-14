@@ -9,6 +9,7 @@ let name = "";
 let typing1 = "";
 let typing2 = "";
 let text_info = [];
+let pokedexnum = "";
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -49,6 +50,7 @@ function addFlavor(flavor) {
 	let description = flavor.flavor_text_entries[numz].flavor_text;
 	let version = flavor.flavor_text_entries[numz].version.name;
 	let namediv = document.createElement("div");
+	let pokedexnum = flavor.pokedex_numbers[0].entry_number;
 
 	namediv.innerHTML =
 		"Name: " +
@@ -58,8 +60,8 @@ function addFlavor(flavor) {
 		" " +
 		version +
 		`<br> ` +
-		"Regional Dex#: <br>  Type:  <br> Region: Kanto <br> Weight: <br> <br>" +
-		description;
+		`National Dex#:${pokedexnum} <br>  Type:  <br> Region: Kanto <br> Weight: <br> <br>
+		${description}`;
 	namediv.setAttribute("id", "namediv");
 	data.append(namediv);
 }
