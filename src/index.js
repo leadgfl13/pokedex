@@ -5,6 +5,7 @@ let submit = document.getElementById("submit");
 let number = document.getElementById("number");
 let left = document.getElementById("left");
 let data = document.getElementById("data");
+let name = "";
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -17,6 +18,7 @@ function addImage(poke) {
 	screen.innerHTML = "";
 	let sprite = document.createElement("img");
 	sprite.src = poke.sprites.front_shiny;
+	name = poke.name;
 	screen.append(sprite);
 	console.log(poke);
 	let cry = "";
@@ -28,6 +30,7 @@ function addImage(poke) {
 	}
 
 	cry.play();
+	return name;
 }
 
 //gets the pokedex info from the second API fetch request and puts it on the screen
@@ -39,8 +42,13 @@ function addFlavor(flavor) {
 	let description = flavor.flavor_text_entries[numz].flavor_text;
 	let version = flavor.flavor_text_entries[numz].version.name;
 	let namediv = document.createElement("div");
+
 	namediv.innerHTML =
+		"Name: " +
+		name +
+		"<br>" +
 		`Pokedex version:` +
+		" " +
 		version +
 		`<br> ` +
 		"Regional Dex#: <br>  Type:  <br> Region: Kanto <br> Weight: <br> <br>" +
@@ -50,13 +58,9 @@ function addFlavor(flavor) {
 }
 
 async function getPokemon(pokemon) {
-	const poke = await fetch(
-		`
-		https://pokeapi.co/api/v2/pokemon/${pokemon}`,
-		{
-			mode: "cors",
-		}
-	)
+	const poke = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`, {
+		mode: "cors",
+	})
 		.then((poke) => poke.json())
 		.then((poke) => {
 			addImage(poke);
