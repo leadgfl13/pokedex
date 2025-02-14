@@ -19,7 +19,14 @@ function addImage(poke) {
 	sprite.src = poke.sprites.front_shiny;
 	screen.append(sprite);
 	console.log(poke);
-	let cry = new Audio(poke.cries.legacy);
+	let cry = "";
+	if (!poke.cries.legacy) {
+		console.log("empty");
+		cry = new Audio(poke.cries.latest);
+	} else {
+		cry = new Audio(poke.cries.legacy);
+	}
+
 	cry.play();
 }
 
