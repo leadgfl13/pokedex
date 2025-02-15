@@ -1,4 +1,18 @@
 import "./style.css";
+import { franc } from "franc-min";
+
+function isEnglish(text) {
+	return franc(text) === "eng";
+}
+
+function checkEnglish(array) {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].language.name === "en") {
+			englisharray.push(array[i]);
+		}
+	}
+	console.log(englisharray);
+}
 
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
@@ -10,6 +24,7 @@ let typing1 = "";
 let typing2 = "";
 let text_info = [];
 let pokedexnum = "";
+let englisharray = [];
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -30,8 +45,6 @@ function addImage(poke) {
 		typing2 = poke.types[1].type.name;
 	}
 
-	console.log(typing1, typing2);
-
 	screen.append(sprite);
 	console.log(poke);
 	let cry = "";
@@ -41,7 +54,6 @@ function addImage(poke) {
 	} else {
 		cry = new Audio(poke.cries.legacy);
 	}
-
 	cry.play();
 	return name;
 }
@@ -49,11 +61,12 @@ function addImage(poke) {
 //gets the pokedex info from the second API fetch request and puts it on the screen
 function addFlavor(flavor) {
 	data.innerHTML = "";
+
+	let englishcheck = checkEnglish(flavor.flavor_text_entries);
 	let numz = (() => {
 		return Math.floor(Math.random() * 10);
 	})();
-	let description = flavor.flavor_text_entries[numz].flavor_text;
-	let version = flavor.flavor_text_entries[numz].version.name;
+
 	let namediv = document.createElement("div");
 	let pokedexnum = flavor.pokedex_numbers[0].entry_number;
 
