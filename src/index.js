@@ -21,10 +21,15 @@ function addImage(poke) {
 	let screen = document.getElementById("screen");
 	screen.innerHTML = "";
 	let sprite = document.createElement("img");
-	sprite.src = poke.sprites.front_shiny;
+	sprite.src = poke.sprites.front_default;
 	name = poke.name;
 	typing1 = poke.types[0].type.name;
-	typing2 = poke.types[1].type.name;
+	if (!poke.types[1]) {
+		typing2 = "";
+	} else {
+		typing2 = poke.types[1].type.name;
+	}
+
 	console.log(typing1, typing2);
 
 	screen.append(sprite);
@@ -60,7 +65,8 @@ function addFlavor(flavor) {
 		" " +
 		version +
 		`<br> ` +
-		`National Dex#:${pokedexnum} <br>  Type:  <br> Region: Kanto <br> Weight: <br> <br>
+		`National Dex#:${pokedexnum} <br>  Type:${typing1} 
+		 <br> Region: Kanto <br> Weight: <br> <br>
 		${description}`;
 	namediv.setAttribute("id", "namediv");
 	data.append(namediv);
