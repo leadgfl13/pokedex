@@ -7,6 +7,7 @@ function isEnglish(text) {
 
 function checkEnglish(array) {
 	for (let i = 0; i < array.length; i++) {
+		let newarray = [];
 		if (array[i].language.name === "en") {
 			englisharray.push(array[i]);
 		}
@@ -64,9 +65,11 @@ function addFlavor(flavor) {
 
 	let englishcheck = checkEnglish(flavor.flavor_text_entries);
 	let numz = (() => {
-		return Math.floor(Math.random() * 10);
+		return Math.floor(Math.random() * englisharray.length);
 	})();
-
+	let base = englisharray[numz];
+	let description = base.flavor_text;
+	let version = base.version.name;
 	let namediv = document.createElement("div");
 	let pokedexnum = flavor.pokedex_numbers[0].entry_number;
 
