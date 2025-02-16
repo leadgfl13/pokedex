@@ -62,7 +62,7 @@ function addImage(poke) {
 //gets the pokedex info from the second API fetch request and puts it on the screen
 function addFlavor(flavor) {
 	data.innerHTML = "";
-
+	englisharray = [];
 	let englishcheck = checkEnglish(flavor.flavor_text_entries);
 	let numz = (() => {
 		return Math.floor(Math.random() * englisharray.length);
