@@ -122,7 +122,32 @@ img {
 	align-items: center;
 	gap: 20px;
 }
-
+.bluegrid {
+	margin-top: -40%;
+	display: Grid;
+	background-color: blue;
+	height: 10%;
+	width: 80%;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: repeat(4, 1fr);
+	margin-bottom: 30%;
+}
+.gridsquare {
+	border: 2px solid black;
+}
+.blackgrid {
+	margin-top: 20%;
+	margin-bottom: -40%;
+	display: Grid;
+	background-color: gray;
+	height: 10%;
+	width: 80%;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: repeat(4, 1fr);
+}
+.blacksquare {
+	border: 2px solid black;
+}
 button {
 	display: flex;
 	justify-content: center;
