@@ -1,5 +1,6 @@
 import "./style.css";
 import { franc } from "franc-min";
+import { pokemons } from "./pokedex.js";
 
 function isEnglish(text) {
 	return franc(text) === "eng";
@@ -14,6 +15,7 @@ function checkEnglish(array) {
 	}
 	console.log(englisharray);
 }
+
 let poke = "";
 let flavor_text = "";
 let search = document.getElementById("info");
@@ -28,15 +30,6 @@ let typing2 = "";
 let text_info = [];
 let pokedexnum = "";
 let englisharray = [];
-
-let pokemons = {
-	charmander: 4,
-	charmeleon: 5,
-	charizard: 6,
-	bulbasaur: 1,
-	ivysaur: 2,
-	venusuar: 3,
-};
 
 top.addEventListener("click", (e) => {
 	e.preventDefault();
