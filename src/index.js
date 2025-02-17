@@ -15,7 +15,7 @@ function checkEnglish(array) {
 	}
 	console.log(englisharray);
 }
-
+let bottom = document.getElementById("blackgrid");
 let poke = "";
 let flavor_text = "";
 let search = document.getElementById("info");
@@ -41,6 +41,22 @@ top.addEventListener("click", (e) => {
 		let pokevalue = pokemons[search.value];
 		console.log(pokevalue);
 		let next = pokevalue + 1;
+		let keyFound = Object.keys(pokemons).find((key) => pokemons[key] === next);
+		search.value = keyFound;
+
+		getPokemon(pokemons[keyFound]);
+	}
+});
+bottom.addEventListener("click", (e) => {
+	e.preventDefault();
+	if (!name) {
+		console.log("yee");
+		getPokemon(`mew`);
+		search.value = "mew";
+	} else {
+		let pokevalue = pokemons[search.value];
+		console.log(pokevalue);
+		let next = pokevalue - 1;
 		let keyFound = Object.keys(pokemons).find((key) => pokemons[key] === next);
 		search.value = keyFound;
 
