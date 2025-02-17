@@ -14,11 +14,13 @@ function checkEnglish(array) {
 	}
 	console.log(englisharray);
 }
-
+let poke = "";
+let flavor_text = "";
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
 let number = document.getElementById("number");
 let left = document.getElementById("left");
+let top = document.getElementById("bluegridid");
 let data = document.getElementById("data");
 let name = "";
 let typing1 = "";
@@ -26,6 +28,16 @@ let typing2 = "";
 let text_info = [];
 let pokedexnum = "";
 let englisharray = [];
+
+let pokemons = { charmander: 4, charmeleon: 5 };
+
+top.addEventListener("click", (e) => {
+	e.preventDefault();
+	if (!name) {
+		console.log("yee");
+		getPokemon(`bulbasaur`);
+	}
+});
 
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
@@ -96,6 +108,7 @@ async function getPokemon(pokemon) {
 		.then((poke) => {
 			addImage(poke);
 			console.log(poke);
+			return poke;
 		});
 
 	const flavor = await fetch(
@@ -108,5 +121,6 @@ async function getPokemon(pokemon) {
 		.then((flavor) => {
 			console.log(flavor);
 			addFlavor(flavor);
+			return flavor;
 		});
 }
