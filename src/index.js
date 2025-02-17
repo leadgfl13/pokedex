@@ -29,13 +29,29 @@ let text_info = [];
 let pokedexnum = "";
 let englisharray = [];
 
-let pokemons = { charmander: 4, charmeleon: 5 };
+let pokemons = {
+	charmander: 4,
+	charmeleon: 5,
+	charizard: 6,
+	bulbasaur: 1,
+	ivysaur: 2,
+	venusuar: 3,
+};
 
 top.addEventListener("click", (e) => {
 	e.preventDefault();
 	if (!name) {
 		console.log("yee");
 		getPokemon(`bulbasaur`);
+		search.value = "bulbasaur";
+	} else {
+		let pokevalue = pokemons[search.value];
+		console.log(pokevalue);
+		let next = pokevalue + 1;
+		let keyFound = Object.keys(pokemons).find((key) => pokemons[key] === next);
+		search.value = keyFound;
+
+		getPokemon(pokemons[keyFound]);
 	}
 });
 
