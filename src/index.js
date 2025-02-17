@@ -37,6 +37,7 @@ function addImage(poke) {
 	let screen = document.getElementById("screen");
 	screen.innerHTML = "";
 	let sprite = document.createElement("img");
+	pokedexnum = poke.id;
 	sprite.src = poke.sprites.front_default;
 	name = poke.name;
 	typing1 = poke.types[0].type.name;
@@ -71,7 +72,6 @@ function addFlavor(flavor) {
 	let description = base.flavor_text;
 	let version = base.version.name;
 	let namediv = document.createElement("div");
-	let pokedexnum = flavor.pokedex_numbers[0].entry_number;
 
 	namediv.innerHTML =
 		"Name: " +
