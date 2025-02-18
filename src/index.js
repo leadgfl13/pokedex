@@ -37,6 +37,11 @@ top.addEventListener("click", (e) => {
 		console.log("yee");
 		getPokemon(`bulbasaur`);
 		search.value = "bulbasaur";
+		return;
+	}
+	if (name === "mew") {
+		search.value === "bulbasaur";
+		getPokemon("bulbasaur");
 	} else {
 		let pokevalue = pokemons[search.value];
 		console.log(pokevalue);
@@ -52,7 +57,11 @@ bottom.addEventListener("click", (e) => {
 	if (!name) {
 		console.log("yee");
 		getPokemon(`mew`);
-		search.value = "mew";
+		search.value === "mew";
+	}
+	if (name === "bulbasaur") {
+		search.value === "mew";
+		getPokemon("mew");
 	} else {
 		let pokevalue = pokemons[search.value];
 		console.log(pokevalue);
