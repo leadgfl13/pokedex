@@ -108,6 +108,7 @@ function addFlavor(flavor) {
 	let base = englisharray[numz];
 	let description = base.flavor_text;
 	let version = base.version.name;
+	let region = flavor.pokedex_numbers[1].pokedex.name;
 	let namediv = document.createElement("div");
 
 	namediv.innerHTML =
@@ -119,7 +120,7 @@ function addFlavor(flavor) {
 		version +
 		`<br> ` +
 		`National Dex#:${pokedexnum} <br>  Type:${typing1} 
-		 <br> Region: Kanto <br> Weight: <br> <br>
+		 <br> Region:${region}  <br> Weight: <br> <br>
 		${description}`;
 	namediv.setAttribute("id", "namediv");
 	data.append(namediv);
