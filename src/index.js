@@ -56,10 +56,10 @@ bottom.addEventListener("click", (e) => {
 	e.preventDefault();
 	if (!name) {
 		console.log("yee");
-		getPokemon(`mew`);
-		search.value = "mew";
+		getPokemon(`celebi`);
+		search.value = "celebi";
 	} else if (name === "bulbasaur") {
-		search.value = "mew";
+		search.value = "celebi";
 		getPokemon("mew");
 	} else {
 		let pokevalue = pokemons[search.value];
