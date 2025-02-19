@@ -33,15 +33,11 @@ let englisharray = [];
 
 top.addEventListener("click", (e) => {
 	e.preventDefault();
-	if (!name) {
+	if (!name || name == "pecharunt") {
 		console.log("yee");
 		getPokemon(`bulbasaur`);
 		search.value = "bulbasaur";
 		return;
-	}
-	if (name === "mew") {
-		search.value === "bulbasaur";
-		getPokemon("bulbasaur");
 	} else {
 		let pokevalue = pokemons[search.value];
 		console.log(pokevalue);
@@ -54,13 +50,10 @@ top.addEventListener("click", (e) => {
 });
 bottom.addEventListener("click", (e) => {
 	e.preventDefault();
-	if (!name) {
+	if (!name || name === "bulbasaur") {
 		console.log("yee");
-		getPokemon(`celebi`);
-		search.value = "celebi";
-	} else if (name === "bulbasaur") {
-		search.value = "celebi";
-		getPokemon("mew");
+		getPokemon(`pecharunt`);
+		search.value = "pecharunt";
 	} else {
 		let pokevalue = pokemons[search.value];
 		console.log(pokevalue);
