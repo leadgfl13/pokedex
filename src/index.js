@@ -127,26 +127,30 @@ function addFlavor(flavor) {
 }
 
 async function getPokemon(pokemon) {
-	const poke = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`, {
-		mode: "cors",
-	})
-		.then((poke) => poke.json())
-		.then((poke) => {
-			addImage(poke);
-			console.log(poke);
-			return poke;
-		});
-
-	const flavor = await fetch(
-		`https://pokeapi.co/api/v2/pokemon-species/${pokemon}`,
-		{
+	try {
+		const poke = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`, {
 			mode: "cors",
-		}
-	)
-		.then((flavor) => flavor.json())
-		.then((flavor) => {
-			console.log(flavor);
-			addFlavor(flavor);
-			return flavor;
-		});
+		})
+			.then((poke) => poke.json())
+			.then((poke) => {
+				addImage(poke);
+				console.log(poke);
+				return poke;
+			});
+
+		const flavor = await fetch(
+			`https://pokeapi.co/api/v2/pokemon-species/${pokemon}`,
+			{
+				mode: "cors",
+			}
+		)
+			.then((flavor) => flavor.json())
+			.then((flavor) => {
+				console.log(flavor);
+				addFlavor(flavor);
+				return flavor;
+			});
+	} catch {
+		alert("Not found");
+	}
 }
