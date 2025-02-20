@@ -15,14 +15,14 @@ function checkEnglish(array) {
 	}
 	console.log(englisharray);
 }
-let bottom = document.getElementById("blackgrid");
+let plus = document.getElementById("plus");
+let minus = document.getElementById("minus");
 let poke = "";
 let flavor_text = "";
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
 let number = document.getElementById("number");
 let left = document.getElementById("left");
-let top = document.getElementById("bluegridid");
 let data = document.getElementById("data");
 let name = "";
 let typing1 = "";
@@ -31,7 +31,7 @@ let text_info = [];
 let pokedexnum = "";
 let englisharray = [];
 
-top.addEventListener("click", (e) => {
+plus.addEventListener("click", (e) => {
 	e.preventDefault();
 	if (!name || name == "pecharunt") {
 		console.log("yee");
@@ -48,7 +48,7 @@ top.addEventListener("click", (e) => {
 		getPokemon(pokemons[keyFound]);
 	}
 });
-bottom.addEventListener("click", (e) => {
+minus.addEventListener("click", (e) => {
 	e.preventDefault();
 	if (!name || name === "bulbasaur") {
 		console.log("yee");
