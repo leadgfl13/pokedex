@@ -151,6 +151,6 @@ async function getPokemon(pokemon) {
 				return flavor;
 			});
 	} catch {
-		alert("Not found");
+		alert("Sorry, this pokemon isn't found.  Try again");
 	}
 }

@@ -135,6 +135,30 @@ img {
 .gridsquare {
 	border: 2px solid black;
 }
+
+.middlearea {
+	width: 95%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 3%;
+	padding: 3%;
+	align-items: center;
+}
+.searchstuff {
+	display: flex;
+	flex-direction: Column;
+	align-items: center;
+	justify-content: center;
+}
+
+.minus,
+.plus {
+	font-size: 68px;
+	font-weight: 800;
+	color: gold;
+	-webkit-text-stroke: 2px black;
+}
 .blackgrid {
 	margin-top: 20%;
 	margin-bottom: -40%;
