@@ -152,5 +152,7 @@ async function getPokemon(pokemon) {
 			});
 	} catch {
 		alert("Sorry, this pokemon isn't found.  Try again");
+		getPokemon(name);
+		search.value = name;
 	}
 }
