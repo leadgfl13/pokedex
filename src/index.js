@@ -152,11 +152,12 @@ async function getPokemon(pokemon) {
 			});
 	} catch {
 		alert("Sorry, this pokemon isn't found.  Try again");
-		if (name) {
+		if (!name) {
+			getPokemon("bulbasaur");
+			search.value = "bulbasaur";
+		} else {
 			getPokemon(name);
 			search.value = name;
 		}
-		getPokemon("bulbasaur");
-		search.value = "bulbasaur";
 	}
 }
