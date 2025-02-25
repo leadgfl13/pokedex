@@ -110,6 +110,13 @@ function addFlavor(flavor) {
 	let version = base.version.name;
 	let region = flavor.pokedex_numbers[1].pokedex.name;
 	let namediv = document.createElement("div");
+	let preevolve = flavor.evolves_from_species;
+	if (preevolve === null) {
+		preevolve = "none";
+	} else {
+		preevolve = preevolve.name;
+	}
+	console.log(preevolve);
 
 	namediv.innerHTML =
 		"Name: " +
@@ -120,7 +127,7 @@ function addFlavor(flavor) {
 		version +
 		`<br> ` +
 		`National Dex#:${pokedexnum} <br>  Type:${typing1} 
-		 <br> Region:${region}  <br> Weight: <br> <br>
+		 <br> Region:${region}  <br> Evolves from:${preevolve} <br> <br>
 		${description}`;
 	namediv.setAttribute("id", "namediv");
 	data.append(namediv);
