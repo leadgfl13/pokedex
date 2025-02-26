@@ -150,6 +150,10 @@ async function getPokemon(pokemon) {
 			.then((poke) => {
 				addImage(poke);
 				console.log(poke);
+				for (let stat in poke.stats) {
+					console.log(poke.stats[stat].stat.name);
+					console.log(poke.stats[stat].base_stat);
+				}
 				console.log(poke.stats[0].stat.name);
 				console.log(poke.stats[0].base_stat);
 
