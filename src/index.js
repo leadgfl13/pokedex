@@ -18,12 +18,14 @@ function checkEnglish(array) {
 let plus = document.getElementById("plus");
 let minus = document.getElementById("minus");
 let poke = "";
+let stats = poke.stats;
 let flavor_text = "";
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
 let number = document.getElementById("number");
 let left = document.getElementById("left");
 let data = document.getElementById("data");
+
 let name = "";
 let typing1 = "";
 let typing2 = "";
@@ -31,6 +33,8 @@ let text_info = [];
 let pokedexnum = "";
 let englisharray = [];
 
+//checks to if it's the last pokemon, if so it goes back to the first
+//otherwise go to next pokemon
 plus.addEventListener("click", (e) => {
 	e.preventDefault();
 	if (!name || name == "pecharunt") {
@@ -48,6 +52,9 @@ plus.addEventListener("click", (e) => {
 		getPokemon(pokemons[keyFound]);
 	}
 });
+
+//checks to see if its the first pokemon, or there is no pokemon
+//and then goes to the last pokemon
 minus.addEventListener("click", (e) => {
 	e.preventDefault();
 	if (!name || name === "bulbasaur") {
@@ -64,6 +71,7 @@ minus.addEventListener("click", (e) => {
 	}
 });
 
+//submits the pokemon and calls the getPokemon function with the search value
 submit.addEventListener("click", (e) => {
 	e.preventDefault();
 	getPokemon(search.value);
@@ -83,7 +91,6 @@ function addImage(poke) {
 	} else {
 		typing2 = poke.types[1].type.name;
 	}
-
 	screen.append(sprite);
 	console.log(poke);
 	let cry = "";
@@ -111,12 +118,13 @@ function addFlavor(flavor) {
 	let region = flavor.pokedex_numbers[1].pokedex.name;
 	let namediv = document.createElement("div");
 	let preevolve = flavor.evolves_from_species;
+	let stats = flavor.stats;
 	if (preevolve === null) {
 		preevolve = "none";
 	} else {
 		preevolve = preevolve.name;
 	}
-	console.log(preevolve);
+	console.log(stats);
 
 	namediv.innerHTML =
 		"Name: " +
@@ -142,6 +150,9 @@ async function getPokemon(pokemon) {
 			.then((poke) => {
 				addImage(poke);
 				console.log(poke);
+				console.log(poke.stats[0].stat.name);
+				console.log(poke.stats[0].base_stat);
+
 				return poke;
 			});
 
