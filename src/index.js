@@ -118,12 +118,12 @@ function addFlavor(flavor) {
 	let version = base.version.name;
 	let region = flavor.pokedex_numbers[1].pokedex.name;
 	let namediv = document.createElement("div");
-	let hp = stats[0].stat.name + ":" + stats[0].base_stat;
-	let attack = stats[1].stat.name + ":" + stats[1].base_stat;
-	let defense = stats[2].stat.name + ":" + stats[2].base_stat;
-	let special_attack = stats[3].stat.name + ":" + stats[3].base_stat;
-	let special_defense = stats[4].stat.name + ":" + stats[4].base_stat;
-	let speed = stats[5].stat.name + ":" + stats[5].base_stat;
+	let hp = stats[0].stat.name + ": " + stats[0].base_stat;
+	let attack = stats[1].stat.name + ": " + stats[1].base_stat;
+	let defense = stats[2].stat.name + ": " + stats[2].base_stat;
+	let special_attack = stats[3].stat.name + ": " + stats[3].base_stat;
+	let special_defense = stats[4].stat.name + ": " + stats[4].base_stat;
+	let speed = stats[5].stat.name + ": " + stats[5].base_stat;
 	//let stamina = stats[6].stat.name + ":" + stats[6].base_stat;
 	let allstats = [hp, attack, defense, special_attack, special_defense, speed];
 	console.log(allstats);
@@ -144,8 +144,19 @@ function addFlavor(flavor) {
 		`<br> ` +
 		`National Dex#:${pokedexnum} <br>  Type:${typing1} 
 		 <br> Region:${region}  <br> Evolves from:${preevolve} <br> <br>
-		${description}`;
-
+		${description}<br> <br>` +
+		hp +
+		`<br> ` +
+		attack +
+		"<br>" +
+		defense +
+		`<br> ` +
+		special_attack +
+		"<br>" +
+		special_defense +
+		`<br> ` +
+		speed +
+		"<br>";
 	namediv.setAttribute("id", "namediv");
 	data.append(namediv);
 }
