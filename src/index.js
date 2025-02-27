@@ -17,15 +17,15 @@ function checkEnglish(array) {
 }
 let plus = document.getElementById("plus");
 let minus = document.getElementById("minus");
-let poke = "";
-let stats = poke.stats;
+
 let flavor_text = "";
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
 let number = document.getElementById("number");
 let left = document.getElementById("left");
 let data = document.getElementById("data");
-
+let stats = "";
+console.log(stats);
 let name = "";
 let typing1 = "";
 let typing2 = "";
@@ -85,6 +85,7 @@ function addImage(poke) {
 	pokedexnum = poke.id;
 	sprite.src = poke.sprites.front_default;
 	name = poke.name;
+	stats = poke.stats;
 	typing1 = poke.types[0].type.name;
 	if (!poke.types[1]) {
 		typing2 = "";
@@ -118,7 +119,6 @@ function addFlavor(flavor) {
 	let region = flavor.pokedex_numbers[1].pokedex.name;
 	let namediv = document.createElement("div");
 	let preevolve = flavor.evolves_from_species;
-	let stats = flavor.stats;
 	if (preevolve === null) {
 		preevolve = "none";
 	} else {
@@ -149,15 +149,8 @@ async function getPokemon(pokemon) {
 			.then((poke) => poke.json())
 			.then((poke) => {
 				addImage(poke);
-				console.log(poke);
-				for (let stat in poke.stats) {
-					console.log(poke.stats[stat].stat.name);
-					console.log(poke.stats[stat].base_stat);
-				}
-				console.log(poke.stats[0].stat.name);
-				console.log(poke.stats[0].base_stat);
 
-				return poke;
+				return { poke };
 			});
 
 		const flavor = await fetch(
