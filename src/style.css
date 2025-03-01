@@ -3,10 +3,6 @@
 
 	src: url("./Pokemon\ Solid.ttf") format("woff"),
 		url("./Pokemon\ Solid.ttf") format("woff");
-
-	font-weight: normal;
-
-	font-style: normal;
 }
 
 body {
@@ -107,6 +103,7 @@ img {
 	border: 6px groove rgb(77, 75, 75);
 	font-size: 16px;
 	overflow-x: scroll;
+	font-weight: lighter;
 }
 .right {
 	background-color: red;
@@ -159,6 +156,17 @@ img {
 	color: gold;
 	-webkit-text-stroke: 2px black;
 }
+
+.minus:active {
+	color: green;
+	background: 4px solid blackl;
+}
+
+.plus:active {
+	color: green;
+	background: 4px solid blackl;
+}
+
 .blackgrid {
 	margin-top: 20%;
 	margin-bottom: -40%;
