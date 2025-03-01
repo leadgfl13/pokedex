@@ -27,6 +27,7 @@ body {
 }
 
 img {
+	align-self: center;
 	height: 100%;
 	width: 100%;
 }
@@ -55,7 +56,7 @@ img {
 	height: 60%;
 	width: 10%;
 	border-radius: 75%;
-	background-color: rgb(54, 143, 232);
+	background-color: blue;
 	border: 4px solid white;
 	margin: 2%;
 	box-shadow: 2px -2px -2px 2px lightblue;
@@ -92,7 +93,6 @@ img {
 	margin: auto;
 	background-color: rgb(88, 129, 88);
 	border: 14px groove lightgray;
-	padding-bottom: 4%;
 }
 
 #data {
@@ -122,14 +122,14 @@ img {
 	gap: 20px;
 }
 .bluegrid {
-	margin-top: -40%;
 	display: Grid;
 	background-color: blue;
-	height: 10%;
+	height: 20%;
 	width: 80%;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: repeat(4, 1fr);
-	margin-bottom: 30%;
+
+	margin-top: 20%;
 }
 .gridsquare {
 	border: 2px solid black;
@@ -148,12 +148,23 @@ img {
 	display: flex;
 	flex-direction: Column;
 	align-items: center;
+	gap: 20px;
 	justify-content: center;
 }
 
+#info {
+	color: black;
+	font-weight: 500;
+	font-size: 20px;
+	border-radius: 5px;
+	background-color: rgb(88, 129, 88);
+}
+::placeholder {
+	color: black;
+}
 .minus,
 .plus {
-	font-size: 68px;
+	font-size: 140px;
 	font-weight: 800;
 	color: gold;
 	-webkit-text-stroke: 2px black;
@@ -170,11 +181,10 @@ img {
 }
 
 .blackgrid {
-	margin-top: 20%;
-	margin-bottom: -40%;
+	margin-bottom: 20%;
 	display: Grid;
 	background-color: gray;
-	height: 10%;
+	height: 20%;
 	width: 80%;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: repeat(4, 1fr);
