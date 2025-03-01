@@ -151,7 +151,16 @@ img {
 	gap: 20px;
 	justify-content: center;
 }
-
+#submit {
+	display: flex;
+	justify-content: center;
+	align-items: Center;
+	background-color: rgb(29, 170, 216);
+	border: 2px solid darkblue;
+}
+#submit:active {
+	background-color: green;
+}
 #info {
 	color: black;
 	font-weight: 500;
