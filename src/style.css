@@ -6,7 +6,9 @@
 }
 
 body {
-	background-color: skyblue;
+	background-image: url("./pokemon-nature-pikachu-charmander-wallpaper-preview.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
