@@ -17,7 +17,7 @@ function checkEnglish(array) {
 }
 let plus = document.getElementById("plus");
 let minus = document.getElementById("minus");
-
+let poke = "";
 let flavor_text = "";
 let search = document.getElementById("info");
 let submit = document.getElementById("submit");
@@ -32,6 +32,7 @@ let typing2 = "";
 let text_info = [];
 let pokedexnum = "";
 let englisharray = [];
+let sprites = [];
 
 //checks to if it's the last pokemon, if so it goes back to the first
 //otherwise go to next pokemon
@@ -84,6 +85,16 @@ function addImage(poke) {
 	let sprite = document.createElement("img");
 	pokedexnum = poke.id;
 	sprite.src = poke.sprites.front_default;
+	let sprites = [
+		poke.sprites.back_default,
+		poke.sprites_front_default,
+		poke.sprites.front_shiny,
+	];
+	let random = Math.floor(Math.random() * sprites.length);
+
+	screen.addEventListener("click", () => {
+		sprite.src = poke.sprites.front_shiny;
+	});
 	name = poke.name;
 	stats = poke.stats;
 	typing1 = poke.types[0].type.name;
