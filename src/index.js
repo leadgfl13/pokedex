@@ -77,27 +77,43 @@ submit.addEventListener("click", (e) => {
 	e.preventDefault();
 	getPokemon(search.value);
 });
+//searches through sprites
+function contains(obj) {
+	let spritearray = [];
+
+	for (let key in obj) {
+		if (typeof obj[key] === "object" && obj[key] !== null) {
+			// Recursively search inside nested objects and concatenate results
+			spritearray = spritearray.concat(contains(obj[key]));
+		} else if (obj[key] !== null) {
+			console.log(obj[key]); // Log non-null values
+			spritearray.push(obj[key]); // Add them to the array
+		} else {
+			console.log("nothing here");
+		}
+	}
+
+	return spritearray;
+}
 
 //uploads the image and plays the cry sound from the first API fetch request
 function addImage(poke) {
+	let spritearray = [];
 	let screen = document.getElementById("screen");
 	screen.innerHTML = "";
 	let sprite = document.createElement("img");
 	pokedexnum = poke.id;
 	sprite.src = poke.sprites.front_default;
-	let sprites = [
-		poke.sprites.back_default,
-		poke.sprites_front_default,
-		poke.sprites.front_shiny,
-	];
-	let random = Math.floor(Math.random() * sprites.length);
+	sprites = contains(poke.sprites, null);
 
 	screen.addEventListener("click", () => {
-		sprite.src = poke.sprites.front_shiny;
+		let random = Math.floor(Math.random() * sprites.length);
+		sprite.src = sprites[random];
 	});
 	name = poke.name;
 	stats = poke.stats;
 	typing1 = poke.types[0].type.name;
+
 	if (!poke.types[1]) {
 		typing2 = "";
 	} else {
